@@ -1,0 +1,120 @@
+
+<html >
+<head>
+    <title>Document</title>
+    <style>
+
+td {
+
+text-align: center;
+}
+#ans{
+    height:30px;
+    
+}
+
+input {
+font-weight: bolder;
+
+width: 90px;
+height: 80px
+
+}
+#output{
+    height:20px;
+}
+
+input:hover {
+
+box-shadow: 3px 3px 2px 2px black;
+font-size: 15px
+}
+
+    </style>
+
+
+<script>
+
+    var a='';
+    var ANS='';
+
+    function doinput(input){
+        a=a + input;
+        document.getElementById("ans").value= a;
+    }
+
+    function doclr(){
+        document.getElementById("ans").value='';
+        a='';
+    }
+
+    function backsp(){
+        a = a.substr(0, a.length - 1); 
+            document.getElementById("ans").value = a;
+    }
+
+    function doevaluate(){
+        ANS= eval(a);
+        document.getElementById("ans").value= ANS;
+    }
+
+    
+
+
+
+</script>
+
+
+</head>
+<body>
+
+    <center>
+
+        <font size="6" color="green">CALCULATOR</font>
+
+        <table width="300px" height="500px" border="1px" bgcolor="grey">
+            <tr>
+                <td colspan="3"><input type="text" id="ans" style="text-align: right; width: 250px" readonly></td>
+                <td><input type="button" id="clear" value="CLEAR" onclick="doclr();"></td>
+            </tr>
+
+            <tr>
+                <td><input type="button" value="1" onclick="doinput('1');"></td>
+                <td><input type="button" value="2" onclick="doinput('2');"></td>
+                <td><input type="button" value="3" onclick="doinput('3');"></td>
+                <td><input type="button" value="+" onclick="doinput('+');"></td>
+            </tr>
+
+            <tr>
+                <td><input type="button" value="4" onclick="doinput('4');"></td>
+                <td><input type="button" value="5" onclick="doinput('5');"></td>
+                <td><input type="button" value="6" onclick="doinput('6');"></td>
+                <td><input type="button" value="-" onclick="doinput('-');"></td>
+            </tr>
+
+            <tr>
+                <td><input type="button" value="7" onclick="doinput('7');"></td>
+                <td><input type="button" value="8" onclick="doinput('8');"></td>
+                <td><input type="button" value="9" onclick="doinput('9');"></td>
+                <td><input type="button" value="*" onclick="doinput('*');"></td>
+            </tr>
+
+            <tr>
+                <td><input type="button" value="." onclick="doinput();"></td>
+                <td><input type="button" value="0" onclick="doinput();"></td>
+                <td><input type="button" value="/" onclick="doinput();"></td>
+                <td><input type="button" value="<<--" onclick="backsp();"></td>
+            </tr>
+
+            <tr>
+                <td><input type="button" value="(" onclick="doinput('(');"></td>
+                <td><input type="button" value=")" onclick="doinput(')');"></td>
+                <td><input type="button" value="%" onclick="doinput('%');"></td>
+                <td><input type="button" value="=" onclick="doevaluate();"></td>
+            </tr>
+            
+        </table>
+    </center>
+    
+</body>
+</html>
